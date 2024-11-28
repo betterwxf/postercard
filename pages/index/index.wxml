@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="input-section">
+      <input class="input-box" 
+             placeholder="请输入提示词" 
+             placeholder-style="text-align: center" 
+             bindinput="handleInput"
+             value="{{inputValue}}"
+      />
+      <button class="generate-btn" 
+              bindtap="handleGenerate"
+              loading="{{isLoading}}"
+      >
+        生成图片
+      </button>
+    </view>
+    
+    <view class="image-section" wx:if="{{imageUrl}}">
+      <image class="generated-image" 
+             src="{{imageUrl}}" 
+             mode="widthFix"
+      />
+    </view>
+  </view>
+</scroll-view>
