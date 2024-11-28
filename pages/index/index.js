@@ -6,7 +6,9 @@ Page({
     isLoading: false
   },
 
+  // 处理输入事件的函数
   handleInput(e) {
+    // 更新 inputValue 数据
     this.setData({
       inputValue: e.detail.value
     })
